@@ -1,19 +1,17 @@
-
-import NavBar from '../components/NavBar'
+import React, { useState } from 'react'
 import Footer from '../components/Footer'
+import NavBar from '../components/NavBar'
 import { ImCross } from 'react-icons/im'
-import { useState } from 'react'
 
-const CreatePosts = () => {
+
+const EditPost = () => {
     const [cat,setCat]=useState("")
-    const [cats,setCats]=useState([])
+  const [cats,setCats]=useState([])
 
     const deleteCategory=(i)=>{
         let updatedCats=[...cats]
         updatedCats.splice(i)
-    
         setCats(updatedCats)
-
     }
 
     const addCategory=()=>{
@@ -21,16 +19,14 @@ const CreatePosts = () => {
         updatedCats.push(cat)
         setCat("")
         setCats(updatedCats)
-
-
     }
-
   return (
     <div>
+      
       <NavBar/>
       <div className='px-6 md:px-[200px] mt-8'>
-        <h1 className='font-bold md:text-2xl text-xl mt-8'>create a post</h1>
-        <form className="w-full flex flex-col space0-y-4 md:space-y-8 mt-4">
+        <h1 className='font-bold md:text-2xl text-xl mt-8'>Update a post</h1>
+        <form className="w-full flex flex-col space-y-4 md:space-y-8 mt-4">
             <input type="text" placeholder='Enter post title' className='px-4 py-2 outline-none' />
             <input type="file"  className='px-4 py-2 ' />
             <div className='flex flex-col'>
@@ -52,16 +48,16 @@ const CreatePosts = () => {
                 </div>
                  </div>
             <textarea rows={15} cols={30} className='px-4 py-2 outline-none' placeholder='Enter post description'/>
-            <button className='bg-black w-full md:w-[20%] mx-auto text-white font-semibold px-4 py-2 md:text-xl text-lg '>Create</button>
+            <button className='bg-black w-full md:w-[20%] mx-auto text-white font-semibold px-4 py-2 md:text-xl text-lg '>update</button>
 
         </form>
 
       </div>
-      <Footer/> 
+      <Footer/>
     </div>
+
+    
   )
 }
 
-export default CreatePosts 
-
-
+export default EditPost
