@@ -18,10 +18,11 @@ const App = () => {
         <Route exact path='/' element={<Home/>}/>
         <Route exact path='/login' element={<Login/>}/>
         <Route exact path='/register' element={<Register/>}/>
-        <Route exact path='/posts/post/' element={<PostDetails/>}/>
+        <Route exact path='/posts/post/:id' element={<PostDetails/>}/>
         <Route excat path='/write' element={<CreatePosts/>}/>
         <Route exact path='/edit/:id' element={<EditPost/>}/>
         <Route exact path='profile/:id' element={<Profile/>}/>
+        
           </Routes>
 
       
